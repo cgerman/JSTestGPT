@@ -1,0 +1,8 @@
+<% layout('./layouts/fullwidth-nav-logx') %>
+
+<main>
+    <section class="vh-100 container pt-2 text-center justify-content-center align-items-center">
+        <h1 class="display-1">About</h1>
+        <p>Pequeña app de prueba de la API de Chat-GPT</p>
+    </section>
+</main>
