@@ -5,6 +5,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 import routes from './controller/routes.js'
+import chatRoutes from './controller/chat/chatRoutes.js'
 import { cfg } from './config.js';
 import session from 'express-session';
 import flash from 'connect-flash';
@@ -34,6 +35,7 @@ app.use(flash());
 
 // routes
 app.use(routes);
+app.use(chatRoutes);
 
 app.all('/*', (req, res) => {
     res.status(404).send('404 Page not found: ' + req.originalUrl);

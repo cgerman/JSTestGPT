@@ -1,8 +1,37 @@
 <% layout('./layouts/fullwidth-nav-logx') %>
 
 <main>
-    <section class="vh-100 container pt-2 text-center justify-content-center align-items-center">
-        <h1 class="display-1">Chat</h1>
-        
-    </section>
+  <section class="container pt-2 text-center">
+    <h2 class="display-2">Chat</h2>
+    <div class="w-75 mx-auto">
+      <%
+        it.conversation.forEach(m => {
+            const cls = 'role_' + m.role;
+            let marginCls = '', rowCls = '';
+            if (m.role === 'user') {
+                rowCls = 'flex-row-reverse';
+                marginCls = 'ms-3';
+            } else {
+                rowCls = 'flex-row';
+                marginCls = 'me-3';
+            }
+    %>
+      <div class="d-flex <%=rowCls%>">
+        <div class="d-inline-flex rounded-3 p-2 mt-1 <%=marginCls%> <%=cls%>"><%=m.content%></div>
+      </div>
+      <%
+        });
+    %>
+        <form action="/chat/addUserPrompt" method="POST">
+            <div class="d-flex justify-content-between mt-3">
+                <div class="d-inline-flex w-100">
+                    <textarea name="userPrompt" class="form-control" rows="3" placeholder="Escribe aquí tu mensaje para chat-GPT"></textarea>
+                </div>
+                <div class="d-inline-flex">
+                    <button class="btn btn-primary" type="submit">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </section>
 </main>

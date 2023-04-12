@@ -4,15 +4,11 @@
 // para las peticiones asíncronas que cascan, de manera que no se para 
 // la aplicación
 import Router from 'express-promise-router';
+import {goChat, addUserPrompt} from './chatController.js';
 
 const router = Router();
 
-router.get('/', (req, res) => {
-    res.render('home');
-});
-
-router.get('/about', (req, res) => {
-    res.render('about');
-});
+router.get('/chat', goChat);
+router.post('/chat/addUserPrompt', addUserPrompt);
 
 export default router;

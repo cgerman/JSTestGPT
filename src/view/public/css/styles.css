@@ -1,0 +1,9 @@
+.role_user {
+    background-color:#e4fbe4;
+    color:darkgreen;
+}
+
+.role_assistant {
+    background-color: #ffe0ca;
+    color:brown;
+}
