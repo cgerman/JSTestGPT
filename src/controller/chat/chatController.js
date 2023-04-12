@@ -32,7 +32,7 @@ export const addUserPrompt = async (req, res) => {
     } catch (error) {
         return res.render('chat', { messages: [{
             type: 'error',
-            text: `No hay saldo en tu cuenta de OpenAI. No pueses usar la API`
+            text: `No hay saldo en tu cuenta de OpenAI. No puedes usar la API`
         }],conversation });
         
     }
